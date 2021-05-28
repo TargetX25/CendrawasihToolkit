@@ -47,7 +47,7 @@ Following are some awesome features offered by this bot:-
 
 ## ***Heroku***
 ### For Heroku users New repo will come soon (This repo will not work on heroku)
-<p><a href="https://github.com/Manssizz/CendrawasihToolkit"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
+<p><a href="https://heroku.com/deploy?template=https://github.com/Manssizz/CendrawasihToolkit"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
 
 ## ***Zeet***
