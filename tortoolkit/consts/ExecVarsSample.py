@@ -11,8 +11,9 @@ except:
         BOT_TOKEN = os.environ.get("BOT_TOKEN")
         BASE_URL_OF_BOT = os.environ.get("BASE_URL")
         # ALLOWED USERS [ids of user or supergroup] seperate by commas
-        ALD_USR = [871967943,1291911714,755983475,1282644258,-1001348584170]
-        
+        ALD_USR = [1036440597, -518719959, -
+                   1001215526475, -1001393596179, -1001359727573]
+
         # Time to wait before edit message
         EDIT_SLEEP_SECS = 5
 
@@ -22,7 +23,7 @@ except:
         # Should force evething uploaded into Document
         FORCE_DOCUMENTS = False
 
-        # Chracter to use as a completed progress 
+        # Chracter to use as a completed progress
         COMPLETED_STR = "█"
 
         # Chracter to use as a incomplete progress
@@ -39,7 +40,7 @@ except:
 
         # DB URI for access
         DB_URI = os.environ.get("DATABASE_URL")
-        
+
         # The base direcory to which the files will be upload if using RCLONE
         RCLONE_BASE_DIR = "/"
 
@@ -56,19 +57,19 @@ except:
 
         # For vps set path here or you can use runtime too
         RCLONE_CONFIG = False
-        
+
         # Name of the RCLONE drive from the config
         DEF_RCLONE_DRIVE = os.environ.get("RCLONE_DRIVE")
 
         # Max size of the torrent allowed
         MAX_YTPLAYLIST_SIZE = 20
-        
+
         # Max size of the torrent allowed
         MAX_TORRENT_SIZE = 100000
 
         # Set this to your bot username if you want to add the username of your bot at the end of the commands like
         # /leech@TorToolkitBot so the value will be @TorToolkitBot
-        BOT_CMD_POSTFIX = os.environ.get("CMD_POSTFIX", True) 
+        BOT_CMD_POSTFIX = os.environ.get("CMD_POSTFIX", True)
 
         # Time out for the status Delete.
         STATUS_DEL_TOUT = os.environ.get("STATUS_DEL", 5)
@@ -82,7 +83,7 @@ except:
         # This is to stop someone from abusing the system by imposing the limit
         # [<GBs of total torrent sapce>, <Number of youtube videos allowed to download>, <Number of youtube playlists allowed to download>]
         USER_CAP_ENABLE = False
-        USER_CAP_LIMIT = [50,10,2]
+        USER_CAP_LIMIT = [50, 10, 2]
 
         # No need to worry about these
         # CHANGE THESE AT YOUR RISK
