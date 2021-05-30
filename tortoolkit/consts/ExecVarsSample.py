@@ -11,9 +11,9 @@ except:
         BOT_TOKEN = os.environ.get("BOT_TOKEN")
         BASE_URL_OF_BOT = os.environ.get("BASE_URL")
         # ALLOWED USERS [ids of user or supergroup] seperate by commas
-        # AUTHORIZED_CHATS = [1036440597,-518719959,-1001215526475,-1001393596179,-1001359727573]
-        AUTHORIZED_CHATS = os.environ.get('AUTHORIZED_CHATS')
-        AUTHORIZED_CHATS = list(map(int, AUTHORIZED_CHATS.split(' '))) if AUTHORIZED_CHATS else []
+        AUTHORIZED_CHATS = [1036440597,-518719959,-1001215526475,-1001393596179,-1001359727573]
+        # AUTHORIZED_CHATS = os.environ.get('AUTHORIZED_CHATS')
+        # AUTHORIZED_CHATS = list(map(int, AUTHORIZED_CHATS.split(' '))) if AUTHORIZED_CHATS else []
 
         # Time to wait before edit message
         EDIT_SLEEP_SECS = 5
