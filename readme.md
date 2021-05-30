@@ -1,10 +1,9 @@
 
-# TorToolkit Telegram
-So basically Tortoolkit is aimed to be the most versatile torrent leecher and Youtube-DL bot for telegram. This bot is highly customizable and to customize this bot you don't need to restart the bot every time. 
-The bot gets started with minimum variables and others can be set as and when needed using the /settings.
-## The Repo will be updated for sure... The repo is not DEAD.
-## [Join Tortoolkit Group for DEMO](https://t.me/TorToolKit)
-## For any help join this:- [TTKDISC](https://t.me/ttkdisc)
+# Cendrawasih Toolkit
+Cendrawasih Toolkit is tool for autonom post content or file in telegram. Supports group or personal chats. 
+Source supports: torrent, direct links, and youtube (single video or playlist).
+
+This repo based of [Yash-dk](https://github.com/yash-dk/TorToolkit-Telegram/tree/beta) repository. Giving him repos stars for apretiate :heart:	 
 
 ## Whats new
 - MegaDL added
@@ -22,7 +21,7 @@ Table of Content
   - [VPS DEPLOYMENT WITHOUT DOCKER](#vps-deployment-without-docker)
 
 
-# Features
+## Features
 Following are some awesome features offered by this bot:-
 - Using the best torrent client to deal with torrent : [qBittorrent](https://github.com/qbittorrent/qBittorrent)
 - You can choose which files you want to download from the torrent.
@@ -276,8 +275,6 @@ Steps:-
     getlogs - Get the robot logs ⚠️ Admin Only
 
 # Credits
-[Yash-DK](https://github.com/yash-dk)
-
-[Lonami](https://github.com/LonamiWebs/Telethon/) for awesome Telethon
-
-[All the Libraries owner](https://github.com/yash-dk/TorToolkit-Telegram/blob/master/requirements.txt)
+- [Yash-DK](https://github.com/yash-dk)
+- [Lonami](https://github.com/LonamiWebs/Telethon/) for awesome Telethon
+- [All the Libraries owner](https://github.com/yash-dk/TorToolkit-Telegram/blob/master/requirements.txt)
