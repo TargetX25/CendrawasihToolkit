@@ -12,8 +12,22 @@ except:
         BASE_URL_OF_BOT = os.environ.get("BASE_URL")
         # ALLOWED USERS [ids of user or supergroup] seperate by commas
         # ALD_USR = [1036440597,-518719959,-1001215526475,-1001393596179,-1001359727573]
-        ALD_USR = os.environ.get('ALD_USR')
-        ALD_USR = list(map(int, ALD_USR.split(' '))) if ALD_USR else []
+        # ALD_USR = os.environ.get('ALD_USR')
+        # ALD_USR = list(map(int, ALD_USR.split(' '))) if ALD_USR else []
+        ALD_USR = set()
+            if os.path.exists('authorized_chats.txt'):
+                with open('authorized_chats.txt', 'r+') as f:
+                    lines = f.readlines()
+                    for line in lines:
+                        #    LOGGER.info(line.split())
+                        ALD_USR.add(int(line.split()[0]))
+            try:
+                achats = os.environ.get('AUTHORIZED_CHATS')
+                achats = achats.split(" ")
+                for chats in achats:
+                    ALD_USR.add(int(chats))
+            except:
+                pass
 
         # Time to wait before edit message
         EDIT_SLEEP_SECS = 5
