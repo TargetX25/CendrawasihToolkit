@@ -6,7 +6,7 @@ RUN chmod -R 777 /ttk
 
 RUN apt -qq update
 
-ENV TZ Asia/Dhaka
+ENV TZ Asia/Jakarta
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt -qq install -y curl git wget \
