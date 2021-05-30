@@ -1,6 +1,6 @@
 import os
 try:
-    from .ExecVarsSample import ExecVars
+    from .ExecVars import ExecVars
 except:
     class ExecVars:
         # TODO optimize for vps use fully - currently only heroku is focused

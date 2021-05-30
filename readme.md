@@ -10,7 +10,7 @@ This repo based of [Yash-dk](https://github.com/yash-dk/TorToolkit-Telegram/tree
 2021-05-30T16:54:34.080013+00:00 app[web.1]: 2021-05-30 22:54:34,079 INFO MainThread tortoolkit.core.HandleManager Not found the entity -1001215526475
 2021-05-30T16:54:35.233828+00:00 app[web.1]: 2021-05-30 22:54:35,233 INFO MainThread tortoolkit.core.HandleManager Not found the entity -1001359727573
 ```
-if you geeting error like this, enable this [line](https://github.com/Manssizz/CendrawasihToolkit/blob/8ae1bbaa2b4e78ae9022fa368faefd3a35471527/tortoolkit/consts/ExecVarsSample.py#L14) and fill with your id. then disable line 15 and 16. After that, remove var `AUTHORIZED_CHATS`
+if you geeting error like this, enable this [line](https://github.com/Manssizz/CendrawasihToolkit/blob/8ae1bbaa2b4e78ae9022fa368faefd3a35471527/tortoolkit/consts/ExecVarsSample.py#L14) and fill with your id. then disable line 15 and 16. After that, remove or disable var `AUTHORIZED_CHATS`
 
 # Yash-dk Original readme
 ## Whats new
