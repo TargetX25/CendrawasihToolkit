@@ -27,7 +27,7 @@
     },
     "AUTHORIZED_CHATS": {
       "description": "Fill User ID and Chat ID of you want to authorize.",
-      "value":"1036440597, -518719959, -1001215526475, -1001393596179, -1001359727573"
+      "value":""
     },
     "API_ID": {
       "description": "Get your api id from http://my.telegram.org/",

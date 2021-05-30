@@ -40,7 +40,7 @@ class VarHolder:
         INTS = ["EDIT_SLEEP_SECS", "MAX_TORRENT_SIZE", "MAX_YTPLAYLIST_SIZE", "TG_UP_LIMIT", "API_ID", "STATUS_DEL_TOUT", "TOR_MAX_TOUT", "OWNER_ID"]
         BOOLS = ["FORCE_DOCUMENTS", "LEECH_ENABLED", "RCLONE_ENABLED", "USETTINGS_IN_PRIVATE"]
 
-        if variable == "ALD_USR":
+        if variable == "AUTHORIZED_CHATS":
             if envval is not None:
                 templi = envval.split(" ")
                 templi2 = []

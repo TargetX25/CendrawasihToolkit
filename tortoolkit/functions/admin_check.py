@@ -27,7 +27,7 @@ async def is_admin(client,user_id,chat_id, force_owner=False):
                 return True
             else:
                 
-                if user_id in get_val("ALD_USR"):
+                if user_id in get_val("AUTHORIZED_CHATS"):
                     return True
                 else:
                     return False
@@ -36,7 +36,7 @@ async def is_admin(client,user_id,chat_id, force_owner=False):
             return False
     except Exception as e:
         torlog.info("Bot Accessed in Private {}".format(e))
-        if user_id in get_val("ALD_USR"):
+        if user_id in get_val("AUTHORIZED_CHATS"):
             return True
         else:
             return False

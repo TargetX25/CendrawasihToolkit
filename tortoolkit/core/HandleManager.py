@@ -31,102 +31,102 @@ import signal
 from PIL import Image
 
 def add_handlers(bot: TelegramClient):
-    #bot.add_event_handler(handle_leech_command,events.NewMessage(func=lambda e : command_process(e,get_command("LEECH")),chats=ExecVars.ALD_USR))
+    #bot.add_event_handler(handle_leech_command,events.NewMessage(func=lambda e : command_process(e,get_command("LEECH")),chats=ExecVars.AUTHORIZED_CHATS))
     
     bot.add_event_handler(
         handle_leech_command,
         events.NewMessage(pattern=command_process(get_command("LEECH")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
     
     bot.add_event_handler(
         handle_purge_command,
         events.NewMessage(pattern=command_process(get_command("PURGE")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
     
     bot.add_event_handler(
         handle_pauseall_command,
         events.NewMessage(pattern=command_process(get_command("PAUSEALL")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
     
     bot.add_event_handler(
         handle_resumeall_command,
         events.NewMessage(pattern=command_process(get_command("RESUMEALL")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
         handle_status_command,
         events.NewMessage(pattern=command_process(get_command("STATUS")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
         handle_u_status_command,
         events.NewMessage(pattern=command_process(get_command("USTATUS")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
         handle_settings_command,
         events.NewMessage(pattern=command_process(get_command("SETTINGS")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
         handle_exec_message_f,
         events.NewMessage(pattern=command_process(get_command("EXEC")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
     
     bot.add_event_handler(
         upload_document_f,
         events.NewMessage(pattern=command_process(get_command("UPLOAD")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
         handle_ytdl_command,
         events.NewMessage(pattern=command_process(get_command("YTDL")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
         handle_ytdl_playlist,
         events.NewMessage(pattern=command_process(get_command("PYTDL")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
     
     bot.add_event_handler(
         about_me,
         events.NewMessage(pattern=command_process(get_command("ABOUT")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
         get_logs_f,
         events.NewMessage(pattern=command_process(get_command("GETLOGS")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
     
     bot.add_event_handler(
         handle_test_command,
         events.NewMessage(pattern="/test",
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
         handle_server_command,
         events.NewMessage(pattern=command_process(get_command("SERVER")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
     
     bot.add_event_handler(
         set_password_zip,
         events.NewMessage(pattern=command_process("/setpass"),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
@@ -137,7 +137,7 @@ def add_handlers(bot: TelegramClient):
     bot.add_event_handler(
         _insta_post_downloader,
         events.NewMessage(pattern=command_process(get_command("INSTADL")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
@@ -148,19 +148,19 @@ def add_handlers(bot: TelegramClient):
     bot.add_event_handler(
         clear_thumb_cmd,
         events.NewMessage(pattern=command_process(get_command("CLRTHUMB")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
     bot.add_event_handler(
         set_thumb_cmd,
         events.NewMessage(pattern=command_process(get_command("SETTHUMB")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
     
     bot.add_event_handler(
         speed_handler,
         events.NewMessage(pattern=command_process(get_command("SPEEDTEST")),
-        chats=get_val("ALD_USR"))
+        chats=get_val("AUTHORIZED_CHATS"))
     )
 
 
@@ -454,7 +454,7 @@ async def handle_upcancel_cb(e):
     if str(e.sender_id) == data[3]:
         db.cancel_download(data[1],data[2])
         await e.answer("Upload has been canceled ;)",alert=True)
-    elif e.sender_id in get_val("ALD_USR"):
+    elif e.sender_id in get_val("AUTHORIZED_CHATS"):
         db.cancel_download(data[1],data[2])
         await e.answer("UPLOAD CANCELED IN ADMIN MODE XD ;)",alert=True)
     else:
@@ -468,7 +468,7 @@ async def callback_handler_canc(e):
     
 
     torlog.debug(f"Here the sender _id is {e.sender_id}")
-    torlog.debug("here is the allower users list {} {}".format(get_val("ALD_USR"),type(get_val("ALD_USR"))))
+    torlog.debug("here is the allower users list {} {}".format(get_val("AUTHORIZED_CHATS"),type(get_val("AUTHORIZED_CHATS"))))
 
     data = e.data.decode("utf-8").split(" ")
     torlog.debug("data is {}".format(data))
@@ -492,7 +492,7 @@ async def callback_handler_canc(e):
         #affected to aria2 too, soo
         await cancel_torrent(hashid, is_aria, is_mega)
         await e.answer("Leech has been canceled ;)",alert=True)
-    elif e.sender_id in get_val("ALD_USR"):
+    elif e.sender_id in get_val("AUTHORIZED_CHATS"):
         hashid = data[1]
         hashid = hashid.strip("'")
         
@@ -845,7 +845,7 @@ async def clear_thumb_cmd(e):
     await e.reply("Thumbnail disabled. Try using /usettings to get more control. Can be used in private too.")
 
 async def handle_user_settings_(message):
-    if not message.sender_id in get_val("ALD_USR"):
+    if not message.sender_id in get_val("AUTHORIZED_CHATS"):
         if not get_val("USETTINGS_IN_PRIVATE") and message.is_private:
             return
 
@@ -878,7 +878,7 @@ def term_handler(signum, frame, client):
     client.loop.run_until_complete(term_async())
 
 async def booted(client):
-    chats = get_val("ALD_USR")
+    chats = get_val("AUTHORIZED_CHATS")
     for i in chats:
         try:
             await client.send_message(i, "The bot is booted and is ready to use.")

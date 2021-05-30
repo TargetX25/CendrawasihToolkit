@@ -76,7 +76,7 @@ Steps:-
       1. `API_HASH`
       2. `API_ID`
       3. `BOT_TOKEN`
-      4. `ALD_USR`
+      4. `AUTHORIZED_CHATS`
       5. `BASE_URL_OF_BOT`
       6. `Uncomment the below DB_URI and comment out the above DB_URI`
       7. Also if the given procedure dosent work then set  `IS_VPS` to True and if you want to change the port when IS_VPS is true then change `SERVPORT` to your desired port number. (Note this should be used as backup)
@@ -127,7 +127,7 @@ Steps:-
        1.  `API_HASH`
        2.  `API_ID`
        3.  `BOT_TOKEN`
-       4.  `ALD_USR`
+       4.  `AUTHORIZED_CHATS`
        5.  `BASE_URL_OF_BOT`
        6.  Change `DB_URI = "dbname=tortk user=postgres password=your-pass host=127.0.0.1 port=5432"`
 
@@ -169,7 +169,7 @@ Steps:-
   - Default Value :- `""`
   - Use :- This is used for file selection of the torrent.
 
-- `ALD_USR`
+- `AUTHORIZED_CHATS`
   - Values :- It is a list of IDs of all the allowed groups and useres who can use this bot in private. 
     - To supply multiple IDs in ExecVarsSample.py seperate by comma ','. 
     - To supply multiple IDs from Environemnt variable seperate by spaces.
