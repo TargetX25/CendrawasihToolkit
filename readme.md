@@ -1,6 +1,6 @@
 # Edit
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://github.com/Manssizz/CendrawasihToolkit/tree/devlopment)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Manssizz/CendrawasihToolkit/tree/devlopment)
 # WebUI
 WebUI for selecting individual torrent file
 
