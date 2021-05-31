@@ -1,140 +1,112 @@
 {
-    "name": "TorToolkit-Telegram",
-    "description": "Telegram leecher bot with python",
-    "logo": "https://raw.githubusercontent.com/devillD/TorToolkit-Telegram/heroku/toolkit.jpg",
-    "keywords": [
-      "telegram",
-      "bot",
-      "qBittorrent",
-      "python"
-    ],
-    "addons": [
-    {
-      "plan": "heroku-postgresql",
-      "options": {
-        "version": "13"
-        }
-      }
-    ],
-    "repository": "https://github.com/devillD/TorToolkit-Telegram",
-    "website": "https://github.com/devillD/TorToolkit-Telegram/tree/heroku",
-    "success_url": "https://github.com/devillD/TorToolkit-Telegram/blob/heroku/readme.md",
-    "stack": "container",
-    "env": {
+  "name": "Telegram Torrent Leecher",
+  "description": "A Telegram Torrent (and youtube-dl) Leecher based on Pyrogram. Powered by @torrentleechgdrivesupport!",
+  "keywords": [
+    "telegram"
+  ],
+  "repository": "https://github.com/gautamajay52/TorrentLeech-Gdrive",
+  "success_url": "",
+  "website": "https://github.com/gautamajay52/TorrentLeech-Gdrive",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable webhooks when in env mode",
+      "value": "ANYTHING"
+    },
+    "APP_ID": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": ""
+    },
     "API_HASH": {
-      "description": "Get your api hash from http://my.telegram.org/",
+      "description": "Get this value from https://my.telegram.org",
       "value": ""
     },
-    "AUTHORIZED_CHATS": {
-      "description": "Fill User ID and Chat ID of you want to authorize.",
-      "value":"[1036440597,-518719959,-1001215526475,-1001393596179,-1001359727573]"
-    },
-    "API_ID": {
-      "description": "Get your api id from http://my.telegram.org/",
+    "TG_BOT_TOKEN": {
+      "description": "get this value from @BotFather",
       "value": ""
     },
-    "BOT_TOKEN": {
-      "description": "Get your bot token from @BotFather",
+    "AUTH_CHANNEL": {
+      "description": "should be an integer. The BOT API ID of the Telegram Group, where the Leecher should work.",
       "value": ""
-    },
-    "BASE_URL": {
-      "description": "Base URL for selecting torrent file",
-      "value": "<your app name>.herokuapp.com"
     },
     "OWNER_ID": {
-      "description": "Fill with your Telegram ID",
+      "description": "should be an integer. ID of owner of bot",
       "value": ""
     },
-    "RCLONE_DRIVE": {
-      "description": "Paste your RClone config here",
-      "value": "",
-      "required" : false
+    "UPLOAD_AS_DOC": {
+      "description": "True/False. If true all files will be uploaded as documents. Default is False.",
+      "required": false
     },
-    "CMD_POSTFIX": {
-      "description": "set True/False for using tag bot i.e: /leech or /leech@CendrawasihToolkit",
-      "value": "True",
-      "required" : false
+    "CHUNK_SIZE": {
+      "description": "should be an integer",
+      "value": "128",
+      "required": false
     },
-    "MEGA_ENABLE": {
-      "description": "set True/False for enabling Mega support",
-      "value": "False",
-      "required" : false
+
+    "EDIT_SLEEP_TIME_OUT": {
+      "description": "should be an integer. Number of seconds to wait before editing a message.",
+      "value": "5",
+      "required": false
     },
-    "MEGA_API": {
-      "description": "Fill with your Mega api key if you enabling Mega.nz support",
-      "value": "",
-      "required" : false
+    "MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START": {
+      "description": "should be an integer. Number of seconds to wait before cancelling a torrent.",
+      "required": false
     },
-    "MEGA_UNAME": {
-      "description": "Fill with your Mega username key if you enabling Mega.nz support",
-      "value": "",
-      "required" : false
+    "FINISHED_PROGRESS_STR": {
+      "description": "should be a single character.",
+      "required": false
     },
-    "MEGA_PASS": {
-      "description": "Fill with your Mega password key if you enabling Mega.nz support",
-      "value": "",
-      "required" : false
+    "UN_FINISHED_PROGRESS_STR": {
+      "description": "should be a single character.",
+      "required": false
     },
-    "STATUS_DEL": {
-      "description": "Auto delete message in seconds. Default 5",
-      "value": "",
-      "required" : false
+    "TG_OFFENSIVE_API": {
+      "description": "should be an URL accepting the FormParams {i}, {m}, and {t}",
+      "required": false
     },
-    "LEECH_CMD": {
-      "description": "Leech command",
-      "value": "leech"
+    "LEECH_COMMAND": {
+      "description": "Enter your custom leech command like /leech@urgroupname and so on. Default is /leech",
+      "required": false
     },
-    "PURGE_CMD": {
-      "description": "Purge command",
-      "value": "purge"
+    "INDEX_LINK": {
+      "description": "Enter your index link:",
+      "required": false
     },
-    "PAUSEALL_CMD": {
-      "description": "Pauseall command",
-      "value": "pauseall"
+    "GLEECH_COMMAND": {
+      "description": "Enter your custom gleech command like /sync@urgroupname and so on. Default is /sync",
+      "required": false
     },
-    "RESUMEALL_CMD": {
-      "description": "Resumeall command",
-      "value": "resumeall"
+    "TELEGRAM_LEECH_COMMAND_G": {
+      "description": "Enter your custom tleech command like /tgsync@urgroupname and so on. Default is /tgsync",
+      "required": false
     },
-    "STATUS_CMD": {
-      "description": "Status command",
-      "value": "status"
+    "YTDL_COMMAND": {
+      "description": "Enter your custom ytdl command like ytdl@urgroupname and so on. Default is /ytdl.",
+      "required": false
     },
-    "SETTINGS_CMD": {
-      "description": "Admin Settings command! Better not keep it as default. Make it harder to guess ;)",
-      "value": "settings"
+    "PYTDL_COMMAND_G": {
+      "description": "Enter your custom pytdl command like ytpl@urgroupname and so on. Default is /ytpl.",
+      "required": false
     },
-    "EXEC_CMD": {
-      "description": "execute command",
-      "value": "exec"
+    "CANCEL_COMMAND_G": {
+      "description": "Enter your custom cancel command like stop@urgroupname and so on. Default is /stop.",
+      "required": false
     },
-    "UPLOAD_CMD": {
-      "description": "Upload command",
-      "value": "upload"
+    "GET_SIZE_G": {
+      "description": "Enter your custom getsize command like getsize@urgroupname and so on. Default is /getsize.",
+      "required": false
     },
-    "YTDL": {
-      "description": "Youtube Download command",
-      "value": "ytdl"
+    "RCLONE_CONFIG": {
+      "description": "Enter your copied text from rclone config. Compulsory for /sync as well as /tgsync command ",
+      "required": false
     },
-    "PYTDL": {
-      "description": "PlayList of youtube download command",
-      "value": "pytdl"
+    "DESTINATION_FOLDER": {
+      "description": "Enter your Cloud folder NAME(not ID😅) in which you want to upload/store your files.",
+      "required": false
     },
-    "ABOUT_CMD": {
-      "description": "About command",
-      "value": "about"
-    },
-    "GETLOGS_CMD": {
-      "description": "GetLog command",
-      "value": "getlogs"
-    },
-    "SERVER_CMD": {
-      "description": "Get server info command",
-      "value": "server"
-    },
-    "USERSETTINGS_CMD": {
-      "description": "User Settings command for specified users or groups",
-      "value": "uset"
+    "CUSTOM_FILE_NAME": {
+      "description": "fill with name u want to prefix the file name like ur channel username🙊, keep empty for do nothing, but add to ur config vars even without input.",
+      "required": false
     }
-  }
+  },
+  "stack": "container"
 }

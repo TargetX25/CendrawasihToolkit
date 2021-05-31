@@ -1,37 +1,38 @@
 FROM ubuntu:20.04
 
-WORKDIR /ttk
 
-RUN chmod -R 777 /ttk
+RUN mkdir ./app
+RUN chmod 777 ./app
+WORKDIR /app
 
-RUN apt -qq update
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Asia/Kolkata
 
-ENV TZ Asia/Jakarta
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt -qq install -y curl git wget \
-    python3 python3-pip \
+RUN apt -qq update --fix-missing && \
+    apt -qq install -y git \
     aria2 \
-    ffmpeg mediainfo unzip p7zip-full p7zip-rar
+    wget \
+    curl \
+    busybox \
+    unzip \
+    unrar \
+    tar \
+    python3 \
+    ffmpeg \
+    python3-pip \
+    p7zip-full \
+    p7zip-rar
 
-RUN curl https://rclone.org/install.sh | bash
+RUN wget https://rclone.org/install.sh
+RUN bash install.sh
 
-
-RUN apt-get install -y software-properties-common
-RUN apt-get -y update
-
-RUN add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
-RUN apt install -y qbittorrent-nox
+RUN mkdir /app/gautam
+RUN wget -O /app/gautam/gclone.gz https://git.io/JJMSG
+RUN gzip -d /app/gautam/gclone.gz
+RUN chmod 0775 /app/gautam/gclone
 
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
-
 COPY . .
-
-RUN chmod 777 alive.sh
-RUN chmod 777 start.sh
-
-RUN useradd -ms /bin/bash unkusr
-USER unkusr
-
-CMD ./start.sh && ./alive.sh
+#RUN chmod +x extract
+CMD ["bash","start.sh"]

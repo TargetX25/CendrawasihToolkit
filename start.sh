@@ -1,1 +1,7 @@
-gunicorn tortoolkit:start_server --bind 0.0.0.0:$PORT --worker-class aiohttp.GunicornWebWorker & python3 -m tortoolkit
+if [[ -n $RCLONE_CONFIG ]]; then
+ echo "Rclone config detected"
+ echo -e "$RCLONE_CONFIG" > /app/rclone.conf
+fi
+chmod +x extract
+python3 -m tobrot
+
