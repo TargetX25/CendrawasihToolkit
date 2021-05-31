@@ -43,7 +43,7 @@
     },
     "OWNER_ID": {
       "description": "Fill with your Telegram ID",
-      "value": "",
+      "value": ""
     },
     "RCLONE_DRIVE": {
       "description": "Paste your RClone config here",
