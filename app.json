@@ -27,7 +27,7 @@
     },
     "AUTHORIZED_CHATS": {
       "description": "Fill User ID and Chat ID of you want to authorize.",
-      "value":""
+      "value":"[1036440597,-518719959,-1001215526475,-1001393596179,-1001359727573]"
     },
     "API_ID": {
       "description": "Get your api id from http://my.telegram.org/",
@@ -40,6 +40,11 @@
     "BASE_URL": {
       "description": "Base URL for selecting torrent file",
       "value": "<your app name>.herokuapp.com"
+    },
+    "OWNER_ID": {
+      "description": "Fill with your Telegram ID",
+      "value": "",
+      "required" : false
     },
     "RCLONE_DRIVE": {
       "description": "Paste your RClone config here",
