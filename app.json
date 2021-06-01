@@ -1,140 +1,109 @@
 {
-    "name": "TorToolkit-Telegram",
-    "description": "Telegram leecher bot with python",
-    "logo": "https://raw.githubusercontent.com/devillD/TorToolkit-Telegram/heroku/toolkit.jpg",
-    "keywords": [
-      "telegram",
-      "bot",
-      "qBittorrent",
-      "python"
-    ],
-    "addons": [
+  "name": "TK - TorToolKit",
+  "description": "A Telegram Bot that leeches magnet/torrent links/files from the interent. YT-DL supported for downloading youtube videos. Supports uploading to different cloud providers. ",
+  "keywords": [
+    "telegram","bot","torrent","leech"
+  ],
+  "repository": "https://github.com/reaitten/tk",
+  "success_url": "https://github.com/reaitten/tk",
+  "website": "https://github.com/reaitten/tk",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your bot token, as a string.",
+      "value": "1766545059:AAG5R62lOcaTASGLbGojDbM9wvYW9gVALE8"
+    },
+    "API_ID": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": "469872"
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": "ae5460690d1509ecd1b8c3382f1e5c71"
+    },
+    "BASE_URL_OF_BOT": {
+      "description": "https://appname.herokuapp.com",
+      "value": ""
+    },
+    "AUTH_CHANNEL": {
+      "description": "ALLOWED USERS [ids of user or supergroup] seperate by spaces",
+      "value": "-1001215526475 -540781498 -580791090"
+    },
+    "GD_INDEX_URL": {
+      "description": "gdrive index link",
+      "required": false
+    },
+    "EDIT_SLEEP_TIME_OUT": {
+      "description": "Time to wait before edit message",
+      "value": "5",
+      "required": false
+    },
+    "FORCE_DOCUMENTS": {
+      "description": "Should force evething uploaded into Document",
+      "value": "False"
+    },
+    "COMPLETED_STR": {
+      "description": "Character to use as a completed progress",
+      "required": false
+    },
+    "REMAINING_STR": {
+      "description": "Character to use as a incomplete progress",
+      "required": false
+    },
+    "RCLONE_ENABLED": {
+      "description": "Will be enabled once its set",
+      "value": "False"
+    },
+    "RCLONE_CONFIG": {
+      "description": "path to rclone.conf, if you uploaded rclone.conf, it should be at /app/rclone.conf",
+      "value": "/app/rclone.conf",
+      "required": false
+    },
+    "DEF_RCLONE_DRIVE": {
+      "description": "Name of the RCLONE drive from the config",
+      "required": false
+    },
+    "RCLONE_BASE_DIR": {
+      "description": "The base direcory to which the files will be upload if using rclone",
+      "value": "/",
+      "required": false
+    },
+    "MAX_YTPLAYLIST_SIZE": {
+      "description": " Max size of a playlist that is allowed (Number of videos)",
+      "value": "20",
+      "required": false
+    },
+    "MAX_TORRENT_SIZE": {
+      "description": "Max size of the torrent allowed",
+      "value": "10000",
+      "required": false
+    },
+    "BOT_CMD_POSTFIX": {
+      "description": "Set this to your bot username if you want to add the username of your bot at the end of the commands like /leech@TorToolkitBot so the value will be @TorToolkitBot",
+      "required": false
+    },
+    "USETTINGS_IN_PRIVATE": {
+      "description": "Allow the user settings to be accessed in private",
+      "value": "False",
+      "required": false
+    },
+    "LEECH_ENABLED": {
+      "description": "Upload to telegram should be enabled or not.",
+      "value": "True",
+      "required": false
+    },
+    "OWNER_ID": {
+      "description": "Used to restrict use of certain stuff to owner only.",
+      "value": "1036440597",
+      "required": false
+    } 
+  },
+ "stack": "container",
+ "addons": [
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "13"
-        }
+        "version": "10"
       }
-    ],
-    "repository": "https://github.com/devillD/TorToolkit-Telegram",
-    "website": "https://github.com/devillD/TorToolkit-Telegram/tree/heroku",
-    "success_url": "https://github.com/devillD/TorToolkit-Telegram/blob/heroku/readme.md",
-    "stack": "container",
-    "env": {
-    "API_HASH": {
-      "description": "Get your api hash from http://my.telegram.org/",
-      "value": ""
-    },
-    "AUTHORIZED_CHATS": {
-      "description": "Fill User ID and Chat ID of you want to authorize.",
-      "value":"[1036440597,-518719959,-1001215526475,-1001393596179,-1001359727573]"
-    },
-    "API_ID": {
-      "description": "Get your api id from http://my.telegram.org/",
-      "value": ""
-    },
-    "BOT_TOKEN": {
-      "description": "Get your bot token from @BotFather",
-      "value": ""
-    },
-    "BASE_URL": {
-      "description": "Base URL for selecting torrent file",
-      "value": "<your app name>.herokuapp.com"
-    },
-    "OWNER_ID": {
-      "description": "Fill with your Telegram ID",
-      "value": ""
-    },
-    "RCLONE_DRIVE": {
-      "description": "Paste your RClone config here",
-      "value": "",
-      "required" : false
-    },
-    "CMD_POSTFIX": {
-      "description": "set True/False for using tag bot i.e: /leech or /leech@CendrawasihToolkit",
-      "value": "True",
-      "required" : false
-    },
-    "MEGA_ENABLE": {
-      "description": "set True/False for enabling Mega support",
-      "value": "False",
-      "required" : false
-    },
-    "MEGA_API": {
-      "description": "Fill with your Mega api key if you enabling Mega.nz support",
-      "value": "",
-      "required" : false
-    },
-    "MEGA_UNAME": {
-      "description": "Fill with your Mega username key if you enabling Mega.nz support",
-      "value": "",
-      "required" : false
-    },
-    "MEGA_PASS": {
-      "description": "Fill with your Mega password key if you enabling Mega.nz support",
-      "value": "",
-      "required" : false
-    },
-    "STATUS_DEL": {
-      "description": "Auto delete message in seconds. Default 5",
-      "value": "",
-      "required" : false
-    },
-    "LEECH_CMD": {
-      "description": "Leech command",
-      "value": "leech"
-    },
-    "PURGE_CMD": {
-      "description": "Purge command",
-      "value": "purge"
-    },
-    "PAUSEALL_CMD": {
-      "description": "Pauseall command",
-      "value": "pauseall"
-    },
-    "RESUMEALL_CMD": {
-      "description": "Resumeall command",
-      "value": "resumeall"
-    },
-    "STATUS_CMD": {
-      "description": "Status command",
-      "value": "status"
-    },
-    "SETTINGS_CMD": {
-      "description": "Admin Settings command! Better not keep it as default. Make it harder to guess ;)",
-      "value": "settings"
-    },
-    "EXEC_CMD": {
-      "description": "execute command",
-      "value": "exec"
-    },
-    "UPLOAD_CMD": {
-      "description": "Upload command",
-      "value": "upload"
-    },
-    "YTDL": {
-      "description": "Youtube Download command",
-      "value": "ytdl"
-    },
-    "PYTDL": {
-      "description": "PlayList of youtube download command",
-      "value": "pytdl"
-    },
-    "ABOUT_CMD": {
-      "description": "About command",
-      "value": "about"
-    },
-    "GETLOGS_CMD": {
-      "description": "GetLog command",
-      "value": "getlogs"
-    },
-    "SERVER_CMD": {
-      "description": "Get server info command",
-      "value": "server"
-    },
-    "USERSETTINGS_CMD": {
-      "description": "User Settings command for specified users or groups",
-      "value": "uset"
     }
-  }
+  ]
 }
