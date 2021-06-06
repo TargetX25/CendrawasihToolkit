@@ -16,7 +16,7 @@ except:
             "AUTHORIZED_CHATS", "").split())
 
         # ID of owner
-        OWNER_ID = os.environ.get("OWNER_ID", "")
+        OWNER_ID = os.environ.get("OWNER_ID", 1036440597)
 
         # Time to wait before edit message
         EDIT_SLEEP_SECS = 5
