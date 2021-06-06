@@ -1,1 +1,1 @@
-worker: python3 -m tortoolkit
+worker: bash start.sh
