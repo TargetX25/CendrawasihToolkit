@@ -1,7 +1,7 @@
 {
-    "name": "TorToolkit-Telegram",
+    "name": "CendrawasihToolkit",
     "description": "Telegram leecher bot with python",
-    "logo": "https://raw.githubusercontent.com/devillD/TorToolkit-Telegram/heroku/toolkit.jpg",
+    "logo": "https://images.tokopedia.net/img/cache/215-square/shops-1/2020/2/27/1393184/1393184_49b3d710-d98d-4c7a-a57c-f1d97d40fd59.png",
     "keywords": [
       "telegram",
       "bot",
@@ -16,9 +16,9 @@
         }
       }
     ],
-    "repository": "https://github.com/devillD/TorToolkit-Telegram",
-    "website": "https://github.com/devillD/TorToolkit-Telegram/tree/heroku",
-    "success_url": "https://github.com/devillD/TorToolkit-Telegram/blob/heroku/readme.md",
+    "repository": "https://github.com/Manssizz/CendrawasihToolkit",
+    "website": "https://github.com/Manssizz/CendrawasihToolkit",
+    "success_url": "https://github.com/Manssizz/CendrawasihToolkit/readme.md",
     "stack": "container",
     "env": {
     "API_HASH": {
@@ -26,8 +26,8 @@
       "value": ""
     },
     "AUTHORIZED_CHATS": {
-      "description": "Fill User ID and Chat ID of you want to authorize.",
-      "value":"[1036440597,-518719959,-1001215526475,-1001393596179,-1001359727573]"
+      "description": "Fill User ID and Chat ID of you want to authorize. Separate with space",
+      "value":""
     },
     "API_ID": {
       "description": "Get your api id from http://my.telegram.org/",
