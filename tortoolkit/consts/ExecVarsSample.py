@@ -10,7 +10,7 @@ except:
         API_ID = int(os.environ.get("APP_ID", 12345))
         BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
         BASE_URL_OF_BOT = os.environ.get("BASE_URL_OF_BOT", "")
-        AUTHORIZED_CHATS = os.environ.get("AUTHORIZED_CHATS", "")
+        AUTHORIZED_CHATS = int(os.environ.get("AUTHORIZED_CHATS", ""))
         # [-1001215526475, -1001393596179, -1001359727573]
         # ALLOWED USERS [ids of user or supergroup] seperate by commas
         # AUTHORIZED_CHATS = set(int(x) for x in os.environ.get(
