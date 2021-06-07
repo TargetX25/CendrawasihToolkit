@@ -25,10 +25,10 @@
       "description": "Get your api hash from http://my.telegram.org/",
       "value": ""
     },
-    "AUTHORIZED_CHATS": {
-      "description": "Fill User ID and Chat ID of you want to authorize. Separate with comma",
-      "value":"[-1001215526475, -1001393596179, -1001359727573]"
-    },
+    // "AUTHORIZED_CHATS": {
+    //   "description": "Fill User ID and Chat ID of you want to authorize. Separate with comma",
+    //   "value":"[-1001215526475, -1001393596179, -1001359727573]"
+    // },
     "API_ID": {
       "description": "Get your api id from http://my.telegram.org/",
       "value": ""
