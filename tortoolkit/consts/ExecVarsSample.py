@@ -1,19 +1,24 @@
 import os
 try:
-    from .ExecVarsSample import ExecVars
+    from .ExecVars import ExecVars
 except:
     class ExecVars:
         # TODO optimize for vps use fully - currently only heroku is focused
         # Set true if its VPS [currently not fully working]
         IS_VPS = False
         API_HASH = os.environ.get("API_HASH")
-        API_ID = int(os.environ.get("API_ID"))
-        BOT_TOKEN = os.environ.get("BOT_TOKEN")
-        BASE_URL_OF_BOT = os.environ.get("BASE_URL")
+        API_ID = int(os.environ.get("APP_ID", 12345))
+        BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+        BASE_URL_OF_BOT = os.environ.get("BASE_URL_OF_BOT", "")
+        # AUTHORIZED_CHATS = int(os.environ.get("AUTHORIZED_CHATS", ""))
+        AUTHORIZED_CHATS = [-534865962]
+        # [-1001215526475, -1001393596179, -1001359727573]
         # ALLOWED USERS [ids of user or supergroup] seperate by commas
-        ALD_USR = [-534865962,847231339]
-        #ALD_USR = os.environ.get('AUTHORIZED_CHATS')
-        #ALD_USR = list(map(int, ALD_USR.split(' '))) if ALD_USR else []
+        # AUTHORIZED_CHATS = set(int(x) for x in os.environ.get(
+        # "AUTHORIZED_CHATS", "").split())
+
+        # ID of owner
+        OWNER_ID = os.environ.get("OWNER_ID", 1036440597)
 
         # Time to wait before edit message
         EDIT_SLEEP_SECS = 5
@@ -25,10 +30,10 @@ except:
         FORCE_DOCUMENTS = False
 
         # Chracter to use as a completed progress
-        COMPLETED_STR = "⬤"
+        COMPLETED_STR = "█"
 
         # Chracter to use as a incomplete progress
-        REMAINING_STR = "○"
+        REMAINING_STR = "░"
 
         # Time to wait before edit message
         EDIT_SLEEP_SECS = 10
